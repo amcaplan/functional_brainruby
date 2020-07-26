@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "functional_brainruby"
+
+input_file = ARGV.pop
+raise "File does not exist!" unless File.exist?(input_file)
+input = File.read(input_file)
+
+out_file = ARGV.pop
+out = FunctionalBrainRuby::Generator.new(input).to_functional_brainruby
+File.write(out_file, out)
+
