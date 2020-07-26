@@ -3,11 +3,11 @@
 require "bundler/setup"
 require "functional_brainruby"
 
-input_file = ARGV.pop
-raise "File does not exist!" unless File.exist?(input_file)
+input_file = File.expand_path(ARGV.shift)
+raise "File #{input_file} does not exist!" unless File.exist?(input_file)
 input = File.read(input_file)
 
-out_file = ARGV.pop
-out = FunctionalBrainRuby::Generator.new(input).to_functional_brainruby
+out_file = File.expand_path(ARGV.shift)
+out = FunctionalBrainruby::Generator.new(input).to_functional_brainruby
 File.write(out_file, out)
 

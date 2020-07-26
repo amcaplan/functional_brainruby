@@ -6,7 +6,7 @@ module FunctionalBrainruby
   class Generator
     ONE = "[[]]<=>[]"
     NEGATIVE_ONE = "[]<=>[[]]"
-    TEMPLATE = ERB.new(File.read('views/template.erb'))
+    TEMPLATE = ERB.new(File.read(File.join(File.dirname(__FILE__), '../../views/template.erb')))
 
     def initialize(string)
       @string = string
