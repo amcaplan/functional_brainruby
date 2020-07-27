@@ -5,7 +5,6 @@ require 'erb'
 module FunctionalBrainruby
   class Generator
     ONE = "[[]]<=>[]"
-    NEGATIVE_ONE = "[]<=>[[]]"
     TEMPLATE = ERB.new(File.read(File.join(File.dirname(__FILE__), '../../views/template.erb')))
 
     def initialize(string)
@@ -29,7 +28,7 @@ module FunctionalBrainruby
           if index == 0
             "__[#{ONE}]"
           else
-            "#{index.times.map { "_[" }.join}#{ONE}#{index.times.map { ",#{NEGATIVE_ONE}]" }.join}"
+            "#{index.times.map { "_[" }.join}#{ONE}#{index.times.map { ",#{ONE}]" }.join}"
           end
         end
       }.compact.join('--') + "]"
