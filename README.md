@@ -27,7 +27,7 @@ You can then run the output file as usual:
 ruby /path/to/output/file.rb
 ```
 
-Explanation coming soon...
+[Explanation here.](./EXPLANATION.md)
 
 That's it!  Have fun!
 
